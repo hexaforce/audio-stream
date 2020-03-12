@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "server.property",
+      "type": "io.hexaforce.audio.server.WebSocketServerApplication$ApplicationProperties",
+      "sourceType": "io.hexaforce.audio.server.WebSocketServerApplication$ApplicationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "server.property.xxx",
+      "type": "java.lang.String",
+      "sourceType": "io.hexaforce.audio.server.WebSocketServerApplication$ApplicationProperties"
+    },
+    {
+      "name": "server.property.yyy",
+      "type": "java.lang.Integer",
+      "sourceType": "io.hexaforce.audio.server.WebSocketServerApplication$ApplicationProperties"
+    }
+  ],
+  "hints": []
+}
