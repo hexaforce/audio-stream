@@ -1,0 +1,18 @@
+logging:
+  config: classpath:logback.xml
+  pattern:
+    level: Contact:%X{user} %5p
+  level:
+    io:
+      hexaforce: 
+        audio: DEBUG
+    org:
+      springframework:
+        web: INFO
+      eclipse:
+        jetty: INFO
+
+server:
+  property:
+    xxx: abcdef
+    yyy: 999
