@@ -29,9 +29,12 @@ public class Microphone implements Runnable {
 	public Microphone(ListenableFuture<WebSocketSession> future) {
 		this.future = future;
 	}
-
+	
+	public boolean recording = false;
+	
 	@Override
 	public void run() {
+
 		if (!AudioSystem.isLineSupported(targetInfo)) {
 			out.println("Microphone not supported");
 			return;
@@ -51,7 +54,9 @@ public class Microphone implements Runnable {
 				if (numBytesRead <= 0 && dataLine.isOpen())
 					continue;
 				if (future.get().isOpen()) {
-					future.get().sendMessage(new BinaryMessage(data));
+					if (recording) {
+						future.get().sendMessage(new BinaryMessage(data));
+					}
 				} else {
 					dataLine.stop();
 					System.exit(0);
